@@ -1,23 +1,11 @@
-# macOS system files
-.DS_Store
-.AppleDouble
-.LSOverride
-._*
+# Ignora tutto
+*
 
-# Distribution archives (exceed GitHub recommended file limits)
-*.zip
-ai-thumbnail-vault.zip
-yt-thumbnail-ai.zip
-
-# Nested app or temporary local folders
-yt-thumbnail-ai/
-app/
-
-# Editor & IDE configs
-.idea/
-.vscode/
-*.sublime-project
-*.sublime-workspace
-
-# Local temp logs
-*.log
+# Traccia solo README.md, .gitignore e gli screenshot ufficiali di assets
+!README.md
+!.gitignore
+!LICENSE
+!assets/
+!assets/fixyoureyes-home-preview.png
+!assets/fixyoureyes-modal-preview.png
+!assets/fixyoureyes-menu-preview.png
