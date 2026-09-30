@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>FIXYOUREYES — 64 AI References</title>
+  <meta name="description" content="64 AI References & 16:9 YouTube Thumbnail Design Reference System by Emanuele BDC. Swiss Editorial Minimalist Web App.">
+  <link rel="icon" type="image/png" href="icons/favicon.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Swiss International Typographic Style Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2026_swiss_v7">
+</head>
+<body>
+
+  <!-- ============================================== -->
+  <!-- SWISS MINIMAL HEADER WITH RIGHT EXPANDABLE MENU-->
+  <!-- ============================================== -->
+  <header class="swiss-header">
+    <div class="header-container">
+      <div class="header-main-row">
+        <div class="brand-block">
+          <h1 class="brand-title">FIXYOUREYES</h1>
+          <p class="brand-subtitle"><span id="brandSubtitleCount">64</span> AI REFERENCES</p>
+        </div>
+        
+        <!-- Header Right Actions: Counter + Minimal Right Side Menu Trigger -->
+        <div class="header-right-actions">
+          <span id="itemsCounterBadge" class="counter-badge" title="Total references count">64</span>
+          <button id="btnOpenSideMenu" class="btn-side-menu-trigger" aria-label="Open navigation menu" title="Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square">
+              <line x1="3" y1="7" x2="21" y2="7"></line>
+              <line x1="3" y1="17" x2="21" y2="17"></line>
+            </svg>
+            <span class="menu-btn-label">MENU</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="search-bar-row">
+        <div class="search-field-wrapper">
+          <svg class="search-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Find reference..." autocomplete="off" spellcheck="false" aria-label="Find reference">
+          <button id="searchClearBtn" class="search-clear-btn" aria-label="Clear search" title="Clear">✕</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================== -->
+  <!-- MAIN CONTENT: 16:9 ONLY GALLERY GRID          -->
+  <!-- ============================================== -->
+  <main class="swiss-main">
+    <div class="gallery-container">
+      <div id="galleryGrid" class="gallery-grid" aria-live="polite">
+        <!-- Rendered dynamically: 100% full uncropped 16:9 images with 16:9 & YOUTUBE overlay badges -->
+      </div>
+
+      <!-- Swiss Pagination -->
+      <nav id="paginationNav" class="pagination-nav" aria-label="Pagination Navigation">
+        <!-- Pagination controls generated in JavaScript -->
+      </nav>
+    </div>
+  </main>
+
+  <!-- ============================================== -->
+  <!-- REFERENCE DETAIL MODAL (CLICK SCHEDA)         -->
+  <!-- ============================================== -->
+  <div id="referenceModal" class="ref-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="ref-modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="ref-modal-wrapper">
+      <!-- Modal Card Body -->
+      <article class="ref-modal-card">
+        <header class="ref-modal-topbar">
+          <div class="topbar-nav-group">
+            <button id="modalTopPrevBtn" class="modal-nav-arrow-btn" title="Previous reference (Arrow Left)" aria-label="Previous Reference">
+              <span class="nav-arrow-icon">←</span>
+              <span class="nav-arrow-label">PREV</span>
+            </button>
+            <div class="modal-counter-index" id="modalCounterText">01 / 64</div>
+            <button id="modalTopNextBtn" class="modal-nav-arrow-btn" title="Next reference (Arrow Right)" aria-label="Next Reference">
+              <span class="nav-arrow-label">NEXT</span>
+              <span class="nav-arrow-icon">→</span>
+            </button>
+          </div>
+          <button id="modalCloseBtn" class="modal-close-btn" title="Close (Esc)" aria-label="Close Reference Detail">✕</button>
+        </header>
+
+        <!-- 16:9 Full Uncropped Reference Image (NO CROPPING) -->
+        <div class="ref-modal-media-frame">
+          <img id="modalImage" src="" alt="Reference thumbnail preview" class="modal-preview-img">
+          <div class="media-overlay-tag format">16:9</div>
+          <div class="media-overlay-tag platform">YOUTUBE</div>
+        </div>
+
+        <!-- Detail Information Section -->
+        <div class="ref-modal-body">
+          <h2 id="modalTitle" class="modal-title">EDITORIAL ILLUSTRATION</h2>
+
+          <!-- Palette & Action Controls Row -->
+          <div class="ref-modal-controls-row">
+            <!-- 5-Color Palette Swatches -->
+            <div class="palette-group">
+              <span class="palette-label">PALETTE</span>
+              <div class="palette-swatches-box" id="modalPaletteSwatches">
+                <!-- 5 color chips rendered dynamically -->
+              </div>
+            </div>
+
+            <!-- Complete Action Buttons: Copy Image, Download, Share Link, Email Share, Open ChatGPT -->
+            <div class="action-buttons-group">
+              <button id="btnCopyImage" class="swiss-action-btn" title="Copy image to clipboard" aria-label="Copy image to clipboard">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+                  <rect x="9" y="9" width="13" height="13"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+
+              <button id="btnDownloadImage" class="swiss-action-btn" title="Download image" aria-label="Download image">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </button>
+
+              <button id="btnShareReference" class="swiss-action-btn" title="Share reference link" aria-label="Share reference link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+                  <circle cx="18" cy="5" r="3"></circle>
+                  <circle cx="6" cy="12" r="3"></circle>
+                  <circle cx="18" cy="19" r="3"></circle>
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                </svg>
+              </button>
+
+              <!-- EMAIL SHARE BUTTON (DIRECT MAILTO) -->
+              <a id="btnEmailShare" href="#" class="swiss-action-btn" title="Share via Email" aria-label="Share via Email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+
+              <!-- OPEN CHATGPT BUTTON -->
+              <a href="https://chatgpt.com" target="_blank" rel="noopener" class="swiss-btn-chatgpt" title="Open ChatGPT in new tab">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="12 8 8 12 12 16 12 8"></polygon>
+                </svg>
+                <span>OPEN CHATGPT ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- TRY WITH THIS PROMPT SECTION (1 DYNAMIC RANDOM PROMPT) -->
+          <section class="modal-prompts-section">
+            <div class="prompts-section-header">
+              <span class="prompts-section-title">TRY WITH THIS PROMPT</span>
+              <button id="btnShufflePrompt" class="btn-shuffle-prompt" title="Get another random prompt for this style">
+                <span>🎲 NEW PROMPT</span>
+              </button>
+            </div>
+
+            <!-- Single dynamic prompt card -->
+            <div class="prompt-single-card" id="singlePromptContainer">
+              <!-- Injected by JavaScript -->
+            </div>
+          </section>
+
+
+          <!-- Open Source Project Credits by Emanuele BDC -->
+          <footer class="ref-modal-card-footer">
+            <span class="card-credit-text">An open source project by </span>
+            <a href="https://linktr.ee/emaf205" target="_blank" rel="noopener" class="card-credit-author">Emanuele BDC ↗</a>
+          </footer>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- RIGHT EXPANDABLE MINIMAL SIDE MENU (SLIDE-OVER)-->
+  <!-- ============================================== -->
+  <div id="sideMenuDrawer" class="side-menu-overlay" aria-hidden="true">
+    <div class="side-menu-backdrop" id="sideMenuBackdrop"></div>
+    <aside class="side-menu-panel" role="dialog" aria-label="Navigation Menu">
+      <div class="side-menu-header">
+        <div class="side-menu-brand">
+          <span class="side-brand-title">FIXYOUREYES</span>
+          <span class="side-brand-sub"><span id="sideMenuSubtitleCount">64</span> AI References</span>
+        </div>
+        <button id="btnCloseSideMenu" class="side-menu-close" title="Close Menu (Esc)" aria-label="Close Menu">✕</button>
+      </div>
+
+      <div class="side-menu-body">
+        <!-- About Section -->
+        <div class="side-menu-group">
+          <span class="side-group-label">ABOUT</span>
+          <p class="side-project-desc">
+            FIXYOUREYES is an open source 16:9 YouTube Thumbnail Design Reference System created by Emanuele BDC. A curated collection of AI visual directions, palettes, and prompt recipes engineered for high-CTR creator workflows.
+          </p>
+        </div>
+
+        <!-- Author Link Section -->
+        <div class="side-menu-group">
+          <span class="side-group-label">AUTHOR & CONTACT</span>
+          <a href="https://linktr.ee/emaf205" target="_blank" rel="noopener" class="side-link-item">
+            <span>Linktree (Emanuele BDC)</span>
+            <span class="side-arrow">↗</span>
+          </a>
+          <a href="mailto:emagumroad@gmail.com" class="side-link-item">
+            <span>emagumroad@gmail.com</span>
+            <span class="side-arrow">✉</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="side-menu-footer">
+        <span>Made with ❤️ in Milan</span>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- SWISS FOOTER                                   -->
+  <!-- ============================================== -->
+  <footer class="swiss-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <p class="footer-love-row">
+          Made with <span class="heart-symbol" aria-label="love">❤️</span> in Milan by 
+          <a href="https://linktr.ee/emaf205" target="_blank" rel="noopener" class="footer-author-link">Emanuele BDC</a>
+          &bull;
+          <a href="mailto:emagumroad@gmail.com" class="footer-author-link">emagumroad@gmail.com</a>
+        </p>
+        <p class="footer-sub-text">
+          FIXYOUREYES &bull; <span id="footerSubtitleCount">64</span> AI References
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Banner -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js?v=2026_swiss_v7"></script>
+  <script src="js/app.js?v=2026_swiss_v7"></script>
+</body>
+</html>
