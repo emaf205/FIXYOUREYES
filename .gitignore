@@ -1,0 +1,23 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Distribution archives (exceed GitHub recommended file limits)
+*.zip
+ai-thumbnail-vault.zip
+yt-thumbnail-ai.zip
+
+# Nested app or temporary local folders
+yt-thumbnail-ai/
+app/
+
+# Editor & IDE configs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Local temp logs
+*.log

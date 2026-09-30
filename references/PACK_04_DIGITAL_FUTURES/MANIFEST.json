@@ -1,0 +1,74 @@
+[
+  {
+    "number": 1,
+    "style": "Cyberpunk",
+    "file": "references/01_CYBERPUNK.png",
+    "source": "ai_in_charge_seven_days_to_autopilot.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "b4b60e2f9c099aa28dfd106b775c3f81d29c32f2fb2ddb5826196b092312158c"
+  },
+  {
+    "number": 2,
+    "style": "Glitch Art",
+    "file": "references/02_GLITCH_ART.png",
+    "source": "ai_took_over_human_offline.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "acf6ea45051968733a5e89488b100ade93597c1713fe7c576933c681d72c445e"
+  },
+  {
+    "number": 3,
+    "style": "Retro Digital",
+    "file": "references/03_RETRO_DIGITAL.png",
+    "source": "ai_went_wild_seven_days_of_chaos.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "6c1bbd1a7972f67587994cceb871cf52ae6df1ff412f989f3e0bc8a8323dfadc"
+  },
+  {
+    "number": 4,
+    "style": "Futuristic Interface",
+    "file": "references/04_FUTURISTIC_INTERFACE.png",
+    "source": "ai_business_autopilot_7_day_control.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "32eb5b091390a8785ff88bf1c0f9df913652ddbd924a079d39a8e8a81bd6c4bb"
+  },
+  {
+    "number": 5,
+    "style": "Technical Blueprint",
+    "file": "references/05_TECHNICAL_BLUEPRINT.png",
+    "source": "ai_business_system_7_day_blueprint.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "765c339984f3363e2f75650171ecd78384268cc6216f98db85f6acffd43a27c4"
+  },
+  {
+    "number": 6,
+    "style": "Isometric 3D",
+    "file": "references/06_ISOMETRIC_3D.png",
+    "source": "ai_business_7_day_automation_growth.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "e77e7bbff855c26d13bccaeb364023c9778bec68b7dd498259f6bcb0d4a5b347"
+  },
+  {
+    "number": 7,
+    "style": "Holographic Futurism",
+    "file": "references/07_HOLOGRAPHIC_FUTURISM.png",
+    "source": "ai_runs_everything_in_the_clouds.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "b380de507ef5bf26f607433a396b9a931519b7ee46af7fe6e1796cbf838953a1"
+  },
+  {
+    "number": 8,
+    "style": "Y2K Digital Maximalism",
+    "file": "references/08_Y2K_DIGITAL_MAXIMALISM.png",
+    "source": "ai_profits_7_day_dashboard_blast.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "49a8a962a2c96547ed3401a298dba217b14505aeafc4a57c2c880a5178ef6965"
+  }
+]
