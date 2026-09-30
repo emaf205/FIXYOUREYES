@@ -64,6 +64,29 @@ This vault solves that by pairing **two complementary elements**:
 
 ---
 
+## 🖥️ FIXYOUREYES — Interactive Web App (v4.0.0)
+
+A client-side web application and PWA designed in **Swiss International Typographic Style**:
+
+- **Pure White Canvas & Sharp Geometry:** 100% white theme (`#ffffff`), crisp black borders, and zero rounded corners (`border-radius: 0px !important`).
+- **Single-Column Centered Feed:** 800px centered editorial stream on desktop with generous vertical spacing (`3.75rem`) and side whitespace for maximum visual impact.
+- **64 AI References:** Uncropped 16:9 thumbnails (`object-fit: contain;`) tagged with `16:9` and `YOUTUBE` badges.
+- **Interactive Detail Modal:**
+  - Dynamic Topbar Navigation: `← PREV` | `01 / 64` | `NEXT →` plus keyboard arrows and mobile touch swipe.
+  - 5-Color Quantized Palettes: Click any swatch to copy its HEX code with instant toast confirmation.
+  - Dynamic AI Prompt Recipe: Single random creative prompt per view with `🎲 NEW PROMPT` shuffle and `COPY PROMPT` clipboard utility.
+  - Action Controls: Copy image to clipboard, 16:9 PNG download, direct link share, `mailto:` email sharing, and direct `OPEN CHATGPT ↗` shortcut.
+- **Minimal Slide-Over Menu:** Right-hand drawer containing strictly the **ABOUT** section and **AUTHOR** link to Emanuele BDC (Linktree).
+- **Offline PWA:** Progressive Web App with service worker caching (`fixyoureyes-v2026-swiss-v5`).
+
+To run locally:
+```bash
+python3 -m http.server 8765 --directory app
+# Then open http://localhost:8765/
+```
+
+---
+
 ## 📄 Master Prompt Preview
 
 <details>
