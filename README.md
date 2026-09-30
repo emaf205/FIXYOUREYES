@@ -2,11 +2,14 @@
 ### 16:9 YouTube Thumbnail Design Reference System
 **Selected AI References & Creative Direction Vault by [Emanuele BDC](https://linktr.ee/emaf205)**
 
+[![Live Demo](https://img.shields.io/badge/live%20demo-fixyoureyes.netlify.app-00ad9f?style=flat-square&logo=netlify)](https://fixyoureyes.netlify.app)
 [![Version](https://img.shields.io/badge/version-4.0.0-black?style=flat-square)](VERSION.txt)
 [![Style](https://img.shields.io/badge/design-Swiss%20Editorial-red?style=flat-square)](#-design-manifesto)
 [![Aspect Ratio](https://img.shields.io/badge/aspect%20ratio-16%3A9-black?style=flat-square)](#)
 [![PWA](https://img.shields.io/badge/PWA-offline%20ready-black?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
+
+🌐 **Live Website:** [https://fixyoureyes.netlify.app](https://fixyoureyes.netlify.app)
 
 > **FIXYOUREYES** is a client-side design reference system engineered for YouTubers, creative directors, and digital creators. Built in strict **Swiss International Typographic Style**, it provides 64 curated, uncropped 16:9 aesthetic anchors, extracted color palettes, dynamic prompt recipes, and instant integration with ChatGPT and AI image generators.
 
@@ -87,6 +90,13 @@ FIXYOUREYES/
 
 ---
 
+## 🌐 Live Web Application
+
+Experience FIXYOUREYES online with zero setup:
+👉 **[https://fixyoureyes.netlify.app](https://fixyoureyes.netlify.app)**
+
+---
+
 ## 🚀 Quick Start (Local Run)
 
 FIXYOUREYES is 100% client-side with zero build steps or npm dependencies.
@@ -140,8 +150,7 @@ Or serve with any static web server (Node `npx serve`, Caddy, Nginx, or Netlify)
 Made with ❤️ in Milan.
 
 - **Linktree:** [linktr.ee/emaf205](https://linktr.ee/emaf205)
-- **YouTube:** [@EmanueleBDC](https://youtube.com/@EmanueleBDC)
-- **Instagram:** [@emanuelebdc](https://instagram.com/emanuelebdc)
+- **Email:** [emagumroad@gmail.com](mailto:emagumroad@gmail.com)
 
 ---
 
