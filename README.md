@@ -5,7 +5,7 @@
 Questo non è un classico progetto software: è un **esperimento editoriale e di ricerca visiva**.  
 L'idea di partenza: **verificare se le copertine dei magazine indipendenti e il graphic design modernista possano salvare le miniature di YouTube dalla mediocrità del clickbait, unendo prompt calibrati e direzione artistica in un workflow concreto**.
 
-Il punto di questa repo non è il codice né l'applicazione. È l'**esperimento in sé**: la documentazione del metodo, il test del prompt master con ChatGPT e il dietro le quinte del pair programming con Google Antigravity. L'applicazione web interattiva è distribuita separatamente su Netlify.
+Il punto di questa repo non è il codice né l'applicazione. È l'**esperimento in sé**: la documentazione del metodo, le proposte grafiche esplorate, dove ci siamo bloccati, come abbiamo risolto i bug critici e il dietro le quinte del pair programming con Google Antigravity. L'applicazione web interattiva è distribuita separatamente su Netlify.
 
 **Esperimento:** *FIXYOUREYES — 64 AI References & Creative Direction Vault*  
 **Autore:** Emanuele BDC  
@@ -19,14 +19,25 @@ Il punto di questa repo non è il codice né l'applicazione. È l'**esperimento 
 
 ```text
 .
+├── .gitignore
+├── LICENSE
 ├── README.md
 └── assets/
     ├── fixyoureyes-home-preview.png
     ├── fixyoureyes-modal-preview.png
-    └── fixyoureyes-menu-preview.png
+    ├── fixyoureyes-menu-preview.png
+    ├── chat-antigravity.png
+    ├── bug-modal-letterbox.png
+    ├── proposta-01-swiss-grid.jpg
+    ├── proposta-02-broadsheet.jpg
+    ├── proposta-03-red-stripe.jpg
+    ├── proposta-concept-modal.jpg
+    ├── chat.png
+    ├── demo.png
+    └── admin.png
 ```
 
-Niente codice sparso, niente HTML, niente pacchetti pesanti da 200 MB. Solo la documentazione dell'esperimento, il racconto del workflow e gli output visivi. L'applicazione completa è distribuita e fruibile su Netlify.
+Niente codice sparso, niente pacchetti pesanti da 200 MB. Solo la documentazione dell'esperimento, i mockup grafici, gli screenshot del percorso e gli output reali. L'applicazione completa è distribuita e fruibile su Netlify.
 
 ---
 
@@ -50,58 +61,133 @@ L'idea dell'esperimento è stata quindi: **trattare ogni miniatura come la coper
 
 ---
 
-## Dietro le quinte: la sessione con Google Antigravity
+## Il Punto di Partenza: Il Vecchio Prototipo
 
-Questo esperimento è nato e si è evoluto in una sessione di lavoro serrata in chat con Google Antigravity. Non un semplice "scrivimi il codice", ma un continuo confronto di direzione artistica e debugging visivo.
+Prima dell'esperimento con Antigravity, il progetto esisteva come un classico prototipo di web app: griglia fitta a 3 o 4 colonne, card dense con icone di modifica, stelline per i preferiti, filtri orizzontali e un pannello laterale di backend per il caricamento in drag & drop.
 
-### 1. Dalla griglia e-commerce alla colonna editoriale
-All'inizio l'interfaccia si presentava come una tipica galleria a 4 colonne: caotica, affollata, sembrava uno store di prodotti digitali. L'istruzione in chat è stata netta:
-> *"Vorrei in home un'unica colonna di immagini, non 4. E su desktop tutto centrato, non da bordo a bordo: solo colonna centrale a 800px con spazio generoso a lato e distanziamento verticale da rivista."*
+![Vecchio Prototipo — Griglia Densa](assets/demo.png)
 
-Antigravity ha riscritto il layout: un flusso verticale disteso, con margini ampi e un ritmo che permette di osservare ciascuna reference senza l'ansia visiva delle griglie dense.
+Funzionava dal punto di vista tecnico, ma visivamente soffriva dello stesso male che volevo combattere: sembrava un gestionale o uno store e-commerce di asset digitali. Mancava il respiro, mancava l'autorevolezza editoriale e mancava una chiara identità radicale.
 
-### 2. Rigore svizzero a zero bordi arrotondati
-Volevo che l'interfaccia stessa incarnasse la filosofia dell'esperimento:
-> *"Niente angoli arrotondati, zero border-radius su bottoni, card, tag e modali. Fondo bianco puro `#ffffff`, nero solido `#000000` e accenti rossi decisi. Niente dark mode o gradienti decorativi."*
-
-### 3. "Sistema la scheda che fa schifo" (Il bug del 16:9)
-Il momento più critico è arrivato testando il click sulle singole miniature. La scheda di dettaglio si apriva deformata: su desktop si allargava a 1610px e, a causa di un `flex-shrink: 1` non vincolato, il frame dell'immagine collassava verticalmente da 448px a 316px. Il rapporto 16:9 si trasformava in un 2.5:1 schiacciato, generando due enormi **bande nere laterali da 117px** che rovinavano l'intera esperienza.
-
-Con Antigravity abbiamo vivisezionato il CSS:
-- ripristinato il wrapper a `max-width: 800px;`;
-- bloccato `aspect-ratio: 16 / 9;` e `flex-shrink: 0;`;
-- impostato `object-fit: cover;` sull'immagine originale;
-- reso la barra dei comandi (`← PREV`, contatore, `NEXT →`, `✕`) **sticky in testa alla modale**, così da restare fissa durante lo scorrimento del prompt e della palette.
-Risultato: **zero barre nere**, immagine a tutta larghezza e navigazione fulminea anche da tastiera.
-
-### 4. La decisione sui repository: scorporare codice e articolo
-Inizialmente avevamo caricato su GitHub l'intera applicazione con tutti i 200 MB di immagini PNG ad alta risoluzione. Ma ripensandoci, era una contraddizione:
-> *"Non inserire file non necessari nella repo, tieni solo readme e assets tanto il link è su Netlify. Racconta l'esperimento come un articolo repo."*
-
-Abbiamo quindi deployato l'applicazione web completa su Netlify ([fixyoureyes.netlify.app](https://fixyoureyes.netlify.app)), mentre questo repository è stato ripulito per diventare ciò che doveva essere: **un saggio aperto, un articolo-documento con il prompt master e il dietro le quinte dell'esperimento**.
+![Vecchio Prototipo — Pannello Backend](assets/admin.png)
 
 ---
 
-## Visual Showcase
+## Le Proposte Grafiche di Antigravity (Cosa ho accettato e cosa ho scartato)
 
-### 1. Il Feed a Colonna Singola (Home)
-Flusso editoriale puro, centrato a 800px, bianco assoluto con le 64 reference non ritagliate.
+All'inizio della sessione di lavoro, ho chiesto ad Antigravity di esplorare nuove direzioni visive ispirate all'International Typographic Style (Scuola Svizzera). L'AI ha generato e proposto diversi mockup grafici ad alto contrasto.
 
-![FIXYOUREYES Homepage Feed](assets/fixyoureyes-home-preview.png)
+### Proposta 1: Swiss Classic Grid (La Griglia di Zurigo)
+* **Concept:** Layout rigoroso, contatore `[64]` in evidenza, bordo nero millimetrico `1px solid #000`, etichette `16:9` e `YOUTUBE` in rosso Swiss puro.
+* **Esito:** **Scartata la griglia densa a 6 colonne** (troppo affollata, disperdeva l'attenzione su ogni singola opera), ma **accettato l'impianto tipografico essenziale**.
 
----
-
-### 2. La Scheda di Dettaglio 16:9
-Ispezione full-bleed senza bande nere, palette a 5 toni estratta con copia esadecimale istantanea, pulsanti di azione (Copia Immagine per ChatGPT, Download, Share) e box con prompt dinamico e shuffle casuale (`🎲 NEW PROMPT`).
-
-![FIXYOUREYES Reference Modal](assets/fixyoureyes-modal-preview.png)
+![Proposta 1 — Swiss Classic Grid](assets/proposta-01-swiss-grid.jpg)
 
 ---
 
-### 3. Il Menu Laterale Minimale
-Solo l'essenziale: visione dell'esperimento e riferimenti reali dell'autore.
+### Proposta 2: Editorial Broadsheet (Stile Manifesto / Gazzetta)
+* **Concept:** Titolo monumentale centrato in Helvetica Black, timbro rosso `64 REFERENCES` e miniature contornate da un passepartout bianco con filetto nero stile stampa d'archivio.
+* **Esito:** **Scartata**. Il passepartout riduceva l'impatto delle miniature e il feeling virava troppo sul vintage d'annata invece che sul modernismo digitale contemporaneo.
 
-![FIXYOUREYES Slide-over Menu](assets/fixyoureyes-menu-preview.png)
+![Proposta 2 — Editorial Broadsheet](assets/proposta-02-broadsheet.jpg)
+
+---
+
+### Proposta 3: Monochrome & Vivid Red Line (Design Magazine)
+* **Concept:** Barra rossa superiore da 3px a filo pagina, badge contatore rosso pieno e paginazione numerica classica `01 / 02 / 03 / 04`.
+* **Esito:** **Scartata la paginazione spezzata**. Volevo un flusso verticale continuo e disteso, non una consultazione a blocchi separati.
+
+![Proposta 3 — Monochrome & Vivid Red Line](assets/proposta-03-red-stripe.jpg)
+
+---
+
+### Il Concept Iniziale della Scheda di Dettaglio
+Antigravity ha proposto anche una prima bozza per la modale di ispezione della miniatura: card centrale con palette estratta a 5 campioni, badge di formato e pulsanti di copia e download.
+
+![Proposta Concept Modale](assets/proposta-concept-modal.jpg)
+
+---
+
+## La Decisione di Design: Il Bivio Radicale
+
+Guardando le proposte a griglia multipla, ho preso una decisione netta che ha cambiato completamente la natura dell'esperimento:
+
+> *"Vorrei in home un'unica colonna di immagini, non 4. E su desktop tutto centrato, non da bordo a bordo: solo colonna centrale a 800px con spazio generoso a lato e distanziamento verticale da rivista.*  
+> *Niente angoli arrotondati, zero border-radius su bottoni, card, tag e modali. Fondo bianco puro `#ffffff`, nero solido `#000000` e accenti rossi decisi. Niente dark mode o gradienti decorativi."*
+
+Questa scelta ha trasformato l'interfaccia da un catalogo denso a una vera e propria **mostra monografica a scorrimento**: ogni reference gode di uno spazio dedicato, isolata dal rumore visivo circostante, esattamente come le pagine di un magazine indipendente di grande formato.
+
+---
+
+## Dietro le Quinte: Dove ci siamo bloccati (I blocchi critici)
+
+La sessione con Antigravity è stata un vero pair programming operativo: niente risposte preconfezionate, ma continui test in tempo reale, scontri con bug inattesi e decisioni strategiche.
+
+![Sessione di Pair Programming con Google Antigravity](assets/chat-antigravity.png)
+
+---
+
+### Blocco 1: "Fa schifo" — Il bug delle bande nere da 117px
+
+Il momento di massima frizione è arrivato testando l'apertura della scheda di dettaglio. Su desktop l'esperienza visiva è crollata:
+
+> *"ma perchè ho probelmi quando apro la scheda? Fa schifo"*
+
+La modale si allargava a tutto schermo fino a 1610px e, a causa di un `flex-shrink: 1` non vincolato nel foglio di stile, il contenitore dell'immagine collassava verticalmente da 448px a 316px. Il formato 16:9 nativo veniva schiacciato in un anomalo 2.5:1, generando **due enormi bande nere laterali da 117px**:
+
+![Bug del 16:9 — Bande Nere Laterali](assets/bug-modal-letterbox.png)
+
+Per un archivio nato per celebrare la precisione geometrica del formato 16:9, avere delle bande nere da pillarboxing era inaccettabile.
+
+Con Antigravity abbiamo vivisezionato il DOM e riscritto il CSS:
+1. **Blocco del wrapper:** limitato rigidamente a `max-width: 800px;` per mantenere l'armonia della colonna centrale;
+2. **Aspect ratio vincolato:** imposto `aspect-ratio: 16 / 9;` con `flex-shrink: 0;` e `width: 100%;`;
+3. **Pieno campo:** impostato `object-fit: cover;` sull'immagine sorgente ad alta risoluzione;
+4. **Header Sticky:** barra comandi (`← PREV`, `01 / 64`, `NEXT →`, `✕`) resa fissa in testa alla modale durante lo scorrimento del prompt e della palette.
+
+**Risultato:** **zero bande nere**, immagine nitida a filo vivo a tutta larghezza e navigazione continua:
+
+![Scheda Dettaglio Risolta — Zero Barre Nere](assets/fixyoureyes-modal-preview.png)
+
+---
+
+### Blocco 2: L'illusione dei link e la pulizia dei dati reali
+
+Inizialmente l'interfaccia conteneva link generici a profili social, GitHub issues e template fittizi. Durante la revisione sono intervenuto per ripulire ogni traccia superflua:
+
+> *"oh lunico link reale è linktree e l'unica mail è emagumroad@gmail.com"*
+
+Tutti i placeholder sono stati rimossi. Nel menu a comparsa e nel footer rimangono esclusivamente i riferimenti autentici dell'autore: il profilo Linktree ufficiale e l'indirizzo email di contatto.
+
+![Menu Laterale Minimale con Link Reali](assets/fixyoureyes-menu-preview.png)
+
+---
+
+### Blocco 3: Scorporare il codice e trasformare la repo in un articolo
+
+Al momento del primo commit su GitHub, abbiamo caricato l'intera cartella locale contenente tutti i 200 MB di file PNG ad alta risoluzione, script e fogli di stile. Guardando la repo, la contraddizione era palese:
+
+> *"Non inserire file non necessari nella repo, tieni solo readme e assets tanto il link è su Netlify. Racconta il progetto come un articolo repo, come transcript-to-magazine-ai... è un esperimento, non un progetto!"*
+
+Abbiamo quindi preso la decisione architetturale finale:
+1. **Deploy dell'app su Netlify:** la web app interattiva è stata pubblicata e ottimizzata su [https://fixyoureyes.netlify.app](https://fixyoureyes.netlify.app);
+2. **Repo GitHub alleggerita e focalizzata:** tracciamento Git pulito di soli `README.md`, `LICENSE` e della cartella `assets/` con le prove visive dell'esperimento.
+
+---
+
+## Il Test Reale con ChatGPT (Prompt Master in Azione)
+
+La galleria di reference da sola non basta: è metà dell'equazione. L'altra metà è il **prompt master** che obbliga il modello linguistico a comportarsi come un art director editoriale.
+
+Nel test sul campo abbiamo fornito a ChatGPT:
+1. Il **Master Prompt V2** di AI YouTube Thumbnail Studio;
+2. Il **transcript reale** del video;
+3. La **foto ritratto del creator**;
+4. La **reference visiva scelta** dall'archivio FIXYOUREYES.
+
+![Test reale in ChatGPT con Master Prompt e Reference](assets/chat.png)
+
+Il modello non si è limitato a una banale richiesta generica: ha analizzato la tensione narrativa del testo, formulato headline ad alto contrasto nella lingua originale (italiano) e composto una miniatura 16:9 potente, che rispetta l'identità visiva della reference senza produrre gli stereotipi dell'AI non diretta.
 
 ---
 
@@ -123,8 +209,6 @@ Le 64 reference dell'archivio coprono 8 perimetri visivi differenti:
 ---
 
 ## Il Prompt Usato
-
-La chiave per far funzionare ChatGPT non è chiedergli *"fai una miniatura"*, ma obbligarlo a operare come un **art director editoriale** che legge prima il transcript o l'articolo, estrae il nucleo narrativo, adotta la reference visiva scelta e genera opzioni originali mantenendo il testo nella lingua del video.
 
 <details>
 <summary><strong>Apri il prompt completo (AI YouTube Thumbnail Studio Master Prompt)</strong></summary>

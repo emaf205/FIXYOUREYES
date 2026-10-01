@@ -1,11 +1,10 @@
 # Ignora tutto
 *
 
-# Traccia solo README.md, .gitignore e gli screenshot ufficiali di assets
+# Traccia solo README.md, .gitignore, LICENSE e gli asset visivi curati
 !README.md
 !.gitignore
 !LICENSE
 !assets/
-!assets/fixyoureyes-home-preview.png
-!assets/fixyoureyes-modal-preview.png
-!assets/fixyoureyes-menu-preview.png
+!assets/*.png
+!assets/*.jpg
