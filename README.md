@@ -1,7 +1,7 @@
 # FIXYOUREYES — YouTube Thumbnail Reference System & Editorial Direction
 
 <p align="center">
-  <img src="https://emaf205.com/github/assets/covers/FIXYOUREYES.jpg" alt="FIXYOUREYES Cover Artwork" width="100%">
+  <img src="assets/social-preview.jpg" alt="FIXYOUREYES Cover Artwork" width="100%">
 </p>
 
 > **"Why can a cover of *The New Yorker*, *Monocle*, or a 1968 Swiss exhibition poster capture your gaze instantly without shouting, while on YouTube it seems mandatory to look desperate?"**  
